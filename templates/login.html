@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+
+</head>
+<style>
+table {
+    border-width: thin;
+    border-spacing: 2px;
+    border-style: none;
+    border-color: black;
+}
+td, th {
+    border: 1px solid black;
+    height: 30px;
+}
+table {
+    border-collapse: collapse;
+}
+.a{
+    width:90%;
+}
+</style>
+<body>
+<p></p>
+<p></p>
+<p></p>
+<p align="center"><h1 align="center">Week12 Assignment - Flask Web Development2</h1></p>
+<form action="/login" method="post">
+    <table width="800" align="center">
+        <tr>
+            <td align="center" colspan="2">Teacher Login</td>
+        </tr>
+        <tr>
+            <td align="center" width="20%">Username</td>
+            <td>&nbsp;<input type="text" name="username" class="a"></input></td>
+        </tr>
+        <tr>
+            <td align="center">Password</td>
+            <td>&nbsp;<input type="password" name="password" class="a"></input></td>
+        </tr>
+        <tr>
+            <td colspan="2">&nbsp;<input type="submit" value="Login">&nbsp;<span style="color:red">{{error_message}}</span></td>
+        </tr>
+
+
+    </table>
+</form>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+
+</head>
+<style>
+table {
+    border-width: thin;
+    border-spacing: 2px;
+    border-style: none;
+    border-color: black;
+}
+td, th {
+    border: 1px solid black;
+    height: 30px;
+}
+table {
+    border-collapse: collapse;
+}
+.a{
+    width:90%;
+}
+</style>
+<body>
+<p></p>
+<p></p>
+<p></p>
+<p align="center"><h1 align="center">Student List</h1></p>
+<form action="/student/add" method="post">
+    <table width="800" align="center">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>View Quiz Result</th>
+        </tr>
+        {%for student in students%}
+        <tr>
+            <td>{{student[1]}}</td>
+            <td>{{student[2]}}</td>
+            <td align="center"><a href="/student/{{student[0]}}">View Quiz Result</a></td>
+        </tr>
+        {%endfor%}
+        <tr>
+            <td colspan="3" align="center">Add Student</td>
+        </tr>
+        <tr>
+            <td>&nbsp;<input type="text" name="FirstName"></td>
+            <td>&nbsp;<input type="text" name="LastName"></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="3">&nbsp;<input type="submit" value="Add Student">&nbsp;<span style="color:red">{{student_message}}</span></td>
+        </tr>
+
+    </table>
+</form>
+<p align="center"><h1 align="center">Quiz List</h1></p>
+<form action="/quiz/add" method="post">
+    <table width="800" align="center">
+        <tr>
+            <th>Quiz Subject</th>
+            <th>Number of Question</th>
+            <th>Quiz Date</th>
+        </tr>
+        {%for quiz in quizzes%}
+        <tr>
+            <td>{{quiz[1]}}</td>
+            <td>{{quiz[2]}}</td>
+            <td>{{quiz[3]}}</td>
+        </tr>
+        {%endfor%}
+        <tr>
+            <td colspan="2" align="center">Add Quiz</td>
+        </tr>
+        <tr>
+            <td>&nbsp;<input type="text" name="QuizSubject"></td>
+            <td>&nbsp;<input type="text" name="NumberOfQuestion"></td>
+            <td>&nbsp;<input type="text" name="QuizDate"> (MM/dd/yyyy)</td>
+        </tr>
+        <tr>
+            <td colspan="3">&nbsp;<input type="submit" value="Add Quiz">&nbsp;<span style="color:red">{{quiz_message}}</span></td>
+        </tr>
+    </table>
+</form>
+<p align="center"><a href="/results/add">Add Quiz Result</a></p>
+
+</body>
+</html>
